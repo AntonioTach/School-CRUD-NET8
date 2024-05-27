@@ -1,0 +1,57 @@
+﻿@model Student
+
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+
+<form method="post" asp-action="Edit">
+    <div class="border p-3 mt-2">
+        <div class="row pb-2">
+            <h1 class="text-center text-black">Edit Student</h1>
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="Name">Name of Student</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="FirstName">First Name of Student</label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="LastName">LastName of Student</label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="Genre">Genre</label>
+            <select asp-for="Genre" class="form-control">
+                <option value="">Select Genre</option>
+                <option value=0>Male</option>
+                <option value=1>Female</option>
+                <option value=2>Other</option>
+            </select>
+            <span asp-validation-for="Genre" class="text-danger"></span>
+        </div> dateOfBirth
+
+        <div class="mb-2">
+            <label asp-for="dateOfBirth">Birthday</label>
+            <input asp-for="dateOfBirth" class="form-control" />
+            <span asp-validation-for="dateOfBirth" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:200px">
+            Upload
+        </button>
+
+        <a asp-controller="Student" asp-action="Index" class="btn btn-secondary" style="width:200px">
+            Back to List
+        </a>
+    </div>
+</form>

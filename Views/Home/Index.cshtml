@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4">Welcome to Admin School</h1>
+    </div>
+    <div class="card mt-5">
+        <div class="card-header bg-primary text-white">
+            <h2>Instrucciones para la Evaluación Técnica</h2>
+        </div>
+        <div class="card-body">
+            <p>Tiene la libertad de elegir el/los lenguajes de programación que considere convenientes.</p>
+            <ul>
+                <li>
+                    La aplicación puede ser tipo:
+                    <ul>
+                        <li>Web</li>
+                        <li>Móvil</li>
+                    </ul>
+                </li>
+                <li>Puede elegir los frameworks, ORMs y gestores de bases de datos que considere.</li>
+                <li>Nos interesa el buen balance entre funcionalidad e interfaz visual con preferencia a que funcione todo lo que se pide.</li>
+                <li>El código debe ser de su autoría.</li>
+                <li>Se espera que utilice lógica de programación y conozca qué hizo en cada paso, no solo copiar y pegar código sin saber qué hace o cómo lo hace.</li>
+            </ul>
+            <h4 class="mt-4">Descripción:</h4>
+            <p>Se requiere una solución para la administración de datos de un colegio, es decir, que se necesitan operaciones CRUD (crear, leer, actualizar y eliminar) para las entidades de:</p>
+            <ul>
+                <li><strong>Alumno:</strong> Id, Nombre, Apellidos, Género, Fecha Nacimiento</li>
+                <li><strong>Profesor:</strong> Id, Nombre Apellidos, Género</li>
+                <li><strong>Grado:</strong> Id, Nombre, ProfesorId</li>
+                <li><strong>AlumnoGrado:</strong> Id, AlumnoId, GradoId, Sección (grupo)</li>
+            </ul>
+            <p>El sistema debe proveer operaciones CRUD para cada entidad.</p>
+            <p>Cuando termine el CRUD, empaquételo en un archivo .zip y súbalo en esta plataforma. De igual manera, conserve una copia. También debe responder las preguntas en esta prueba.</p>
+        </div>
+    </div>
+</div>

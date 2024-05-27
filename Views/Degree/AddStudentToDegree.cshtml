@@ -1,0 +1,30 @@
+﻿@model Tuple<int?, List<Student>>
+@{
+    ViewData["Title"] = "AddStudentToDegree";
+}
+
+<h1>Add Student To Degree</h1>
+<p>Degree Id: @Model.Item1</p>
+
+<form method="post" asp-action="AddStudentToDegreeConfirmed">
+    <input type="hidden" name="degreeId" value="@Model.Item1" />
+
+    <div class="form-group">
+        <label for="studentId">Select Student</label>
+        <select id="studentId" name="studentId" class="form-control">
+            @foreach (var student in Model.Item2)
+            {
+                <option value="@student.Id">@student.Name @student.FirstName</option>
+            }
+        </select>
+        
+    </div>
+
+    <div class="form-group">
+        <label for="section">Section</label>
+        <input type="text" id="section" name="section" class="form-control" required maxlength="100" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-4">Add Student to Degree</button>
+</form>
+

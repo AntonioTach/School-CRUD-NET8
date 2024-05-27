@@ -1,0 +1,41 @@
+﻿@model Tuple<Degree, List<Student>>
+
+@{
+    ViewData["Title"] = "SeeStudents";
+}
+
+<h2 class="text-center">Students for Degree: @Model.Item1.Name</h2>
+<div class="pb-4 text-end">
+    <a asp-controller="Degree" asp-action="AddStudentToDegree" asp-route-id="@Model.Item1.Id" class="btn btn-primary">
+        Add Alumn to Degree
+    </a>
+</div>
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model.Item2)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>
+                    <a class="btn btn-danger" asp-action="RemoveStudentToDegree" asp-route-id="@student.Id">
+                        <i class="bi bi-trash"></i>
+                        Remove
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

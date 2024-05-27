@@ -1,0 +1,37 @@
+﻿@model Degree
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<form method="post" asp-action="Edit">
+    <div class="border p-3 mt-2">
+        <div class="row pb-2">
+            <h1 class="text-center text-black">Edit Degree</h1>
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="Name">Name of Degree</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="TeacherId">Teacher for Degree</label>
+            <select asp-for="TeacherId" class="form-control" asp-items="ViewBag.TeacherList">
+                <option value="">Select Teacher</option>
+            </select>
+            <span asp-validation-for="TeacherId" class="text-danger"></span>
+        </div>
+
+        <input type="hidden" asp-for="Id" />
+
+        <button type="submit" class="btn btn-primary" style="width:200px">
+            Upload
+        </button>
+
+        <a asp-controller="Degree" asp-action="Index" class="btn btn-secondary" style="width:200px">
+            Back to List
+        </a>
+    </div>
+</form>

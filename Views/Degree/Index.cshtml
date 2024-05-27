@@ -1,0 +1,55 @@
+﻿@model IEnumerable<School_CRUD.Models.Degree>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center p-4">Degree's</h1>
+
+<div class="pb-4 text-end">
+    <a asp-controller="Degree" asp-action="Create" class="btn btn-primary">
+        Create Degree
+    </a>
+</div>
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Degree ID</th>
+            <th>Name</th>
+            <th>Teacher</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var degree in Model)
+        {
+            <tr>
+                <td>@degree.Id</td>
+                <td>@degree.Name</td>
+                <td>
+                    @if (degree.Teacher != null)
+                    {
+                        @($"{degree.Teacher.Name} {degree.Teacher.LastName}")
+                    }
+                    else
+                    {
+                        <span>No teacher assigned</span>
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@degree.Id">
+                        <i class="bi bi-pen"></i>
+                        Edit
+                    </a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@degree.Id">
+                        <i class="bi bi-trash"></i>
+                        Delete
+                    </a>
+                    <a class="btn btn-secondary" asp-action="SeeStudents" asp-route-id="@degree.Id">
+                        <i class="bi bi-eye"></i>
+                        See Students
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

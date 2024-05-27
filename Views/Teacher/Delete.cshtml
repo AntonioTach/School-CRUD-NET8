@@ -1,0 +1,47 @@
+﻿@model Teacher
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<form method="post" asp-action="Delete">
+    <div class="border p-3 mt-2">
+        <div class="row pb-2">
+            <h1 class="text-center text-black">Delete Teacher</h1>
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="Name">Name of Teacher</label>
+            <input asp-for="Name" disabled  class="form-control"/>
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="FirstName">First Name of Teacher</label>
+            <input asp-for="FirstName" disabled class="form-control" />
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="LastName">LastName of Teacher</label>
+            <input asp-for="LastName" disabled class="form-control" />
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="Genre">Genre</label>
+            <select asp-for="Genre" disabled class="form-control">
+                <option value="">Select Genre</option>
+                <option value=0>Male</option>
+                <option value=1>Female</option>
+                <option value=2>Other</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-danger" style="width:200px">
+            Delete
+        </button>
+
+        <a asp-controller="Teacher" asp-action="Index" class="btn btn-secondary" style="width:200px">
+            Back to List
+        </a>
+    </div>
+</form>

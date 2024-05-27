@@ -1,0 +1,15 @@
+﻿@model StudentDegree
+
+@{
+    ViewData["Title"] = "Remove Student From Degree";
+}
+
+<h1>Remove Student From Degree</h1>
+
+
+<form method="post" asp-action="RemoveStudentFromDegreeConfirmed">
+    <input type="hidden" name="degreeId" value="@Model.DegreeId" />
+    <input type="hidden" name="studentId" value="@Model.StudentId" />
+
+    <button type="submit" class="btn btn-danger mt-4">Remove Student from Degree</button>
+</form>

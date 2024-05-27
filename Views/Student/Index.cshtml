@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "index";
+}
+
+<h1 class="text-center p-4">Student's</h1>
+
+<div class="pb-4 text-end">
+    <a asp-controller="Student" asp-action="Create" class="btn btn-primary">
+        Create Student
+    </a>
+</div>
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Genre</th>
+            <th>dateOfBirth</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@student.Genre</td>
+                <td>@student.dateOfBirth</td>
+
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@student.Id">
+                        <i class="bi bi-pen"></i>
+                        Edit
+                    </a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@student.Id">
+                        <i class="bi bi-trash"></i>
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
